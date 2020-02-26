@@ -1,0 +1,23 @@
+db:
+    build: ../databases
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - "databases.env"
+authentication:
+    build: ../authentication
+    ports:
+      - "7433:7433"
+    expose:
+      - "7433"
+    env_file:
+      - "authentication.env"
+bakery:
+    build: ./bakery
+    ports:
+      - "3200:3200"
+    expose:
+      - "3200"
+    env_file:
+      - "bakery.env"

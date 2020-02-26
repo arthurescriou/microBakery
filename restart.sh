@@ -1,0 +1,1 @@
+./start.sh && ./stop.sh
