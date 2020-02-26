@@ -1,5 +1,5 @@
 db:
-    build: ../databases
+    build: ../pg/databases
     restart: always
     ports:
       - "5432:5432"
