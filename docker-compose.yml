@@ -5,6 +5,8 @@ db:
       - "5432:5432"
     env_file:
       - "databases.env"
+    networks:
+      - micro-bakery
 authentication:
     build: ../authentication
     ports:
@@ -13,6 +15,8 @@ authentication:
       - "7433"
     env_file:
       - "authentication.env"
+    networks:
+      - micro-bakery
 bakery:
     build: ./bakery
     ports:
@@ -21,3 +25,8 @@ bakery:
       - "3200"
     env_file:
       - "bakery.env"
+    networks:
+      - micro-bakery
+networks:
+  micro-bakery:
+    driver: bridge
