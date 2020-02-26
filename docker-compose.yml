@@ -1,32 +1,34 @@
-db:
-    build: ../pg/databases
-    restart: always
-    ports:
-      - "5432:5432"
-    env_file:
-      - "databases.env"
-    networks:
-      - micro-bakery
-authentication:
-    build: ../authentication
-    ports:
-      - "7433:7433"
-    expose:
-      - "7433"
-    env_file:
-      - "authentication.env"
-    networks:
-      - micro-bakery
-bakery:
-    build: ./bakery
-    ports:
-      - "3200:3200"
-    expose:
-      - "3200"
-    env_file:
-      - "bakery.env"
-    networks:
-      - micro-bakery
+version: "3"
+services:
+  db:
+      build: ../databases/pg
+      restart: always
+      ports:
+        - "5432:5432"
+      env_file:
+        - "databases.env"
+      networks:
+        - micro-bakery
+  authentication:
+      build: ../authentication
+      ports:
+        - "7433:7433"
+      expose:
+        - "7433"
+      env_file:
+        - "authentication.env"
+      networks:
+        - micro-bakery
+  bakery:
+      build: ./bakery
+      ports:
+        - "3200:3200"
+      expose:
+        - "3200"
+      env_file:
+        - "bakery.env"
+      networks:
+        - micro-bakery
 networks:
   micro-bakery:
     driver: bridge
