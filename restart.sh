@@ -1,1 +1,1 @@
-./start.sh && ./stop.sh
+./stop.sh && ./start.sh

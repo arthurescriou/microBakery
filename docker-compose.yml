@@ -11,16 +11,21 @@ services:
         - micro-bakery
   authentication:
       build: ../authentication
+      restart: always
       ports:
         - "7433:7433"
       expose:
         - "7433"
       env_file:
         - "authentication.env"
+      depends_on:
+        - "bakery"
+        - "db"
       networks:
         - micro-bakery
   bakery:
       build: ./bakery
+      restart: always
       ports:
         - "3200:3200"
       expose:

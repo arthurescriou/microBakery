@@ -14,7 +14,7 @@
   dependencies:
     chalk "^2.4.2"
 
-"@frenchpastries/bakery@^0.3.1":
+"@frenchpastries/bakery@^0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@frenchpastries/bakery/-/bakery-0.3.2.tgz#fd2cd194df7435bfe68985ecaf4f741f8260aece"
   integrity sha512-ACG401XGgF/2pLA1kWu7vnoWK+JgRhGmPJDlfVD/w90FPiMdyNkyE3SZbuQdH06O8yQGIKfsfJPkwZcMCkqlUw==
